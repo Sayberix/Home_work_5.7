@@ -17,7 +17,7 @@
             FillArray(array);
             OutputArray(array);
 
-            // функция заполнения массива произольныими вещественными числами
+            // функция заполнения массива произольными вещественными числами
             void FillArray(double[,] ArrayInFunction)
             {
                 for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
