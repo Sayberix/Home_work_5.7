@@ -15,6 +15,7 @@
             int m = 3, n = 4;
             double[,] array = new double[m, n];
             FillArray(array);
+            OutputArray(array);
 
             void FillArray(double[,] ArrayInFunction)
             {
@@ -25,6 +26,19 @@
                         Random autoRand = new Random();
                         ArrayInFunction[i, j] = Math.Round(autoRand.NextDouble() * 10,2);
                     }
+                }
+            }
+
+            void OutputArray(double[,] ArrayInFunction)
+            {
+                Console.WriteLine("Вывод массива, с произвольно генерируемыми вещественными числами:");
+                for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
+                {
+                    for (int j = 0; j < ArrayInFunction.GetLength(1); j++)
+                    {
+                        Console.Write(ArrayInFunction[i, j] + "\t");
+                    }
+                    Console.Write("\n");
                 }
             }
         }
