@@ -17,6 +17,7 @@
             FillArray(array);
             OutputArray(array);
 
+            // функция заполнения массива произольныими вещественными числами
             void FillArray(double[,] ArrayInFunction)
             {
                 for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
@@ -29,6 +30,7 @@
                 }
             }
 
+            // функция вывода массива
             void OutputArray(double[,] ArrayInFunction)
             {
                 Console.WriteLine("Вывод массива, с произвольно генерируемыми вещественными числами:");
