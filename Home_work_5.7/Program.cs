@@ -10,34 +10,24 @@
         // 1 -3,3 8 -9,9
         // 8 7,8 -7,1 9
 
+        // Вариант решения задачи одной функцией. Решение с двумя функциями можно посмотреть в коммите e62ef2a - git checkout e62ef2a
+
         private static void Main(string[] args)
         {
             int m = 3, n = 4;
             double[,] array = new double[m, n];
-            FillArray(array);
-            OutputArray(array);
+            FillandOutputArray(array);
 
-            // функция заполнения массива произольными вещественными числами
-            void FillArray(double[,] ArrayInFunction)
-            {
-                for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
-                {
-                    for (int j = 0; j < ArrayInFunction.GetLength(1); j++)
-                    {
-                        Random autoRand = new Random();
-                        ArrayInFunction[i, j] = Math.Round(autoRand.NextDouble() * 10,2);
-                    }
-                }
-            }
-
-            // функция вывода массива
-            void OutputArray(double[,] ArrayInFunction)
+            // функция заполнения и вывода массива произольными вещественными числами
+            void FillandOutputArray(double[,] ArrayInFunction)
             {
                 Console.WriteLine("Вывод массива, с произвольно генерируемыми вещественными числами:");
                 for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
                 {
                     for (int j = 0; j < ArrayInFunction.GetLength(1); j++)
                     {
+                        Random autoRand = new Random();
+                        ArrayInFunction[i, j] = Math.Round(autoRand.NextDouble() * 10,2);
                         Console.Write(ArrayInFunction[i, j] + "\t");
                     }
                     Console.Write("\n");
