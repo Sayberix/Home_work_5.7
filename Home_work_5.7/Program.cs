@@ -13,6 +13,21 @@
 
         private static void Main(string[] args)
         {
+            int m = 4, n = 4;
+            int[,] array = new int[m,n];
+            FillArray(array);
+
+            void FillArray(int[,] ArrayInFunction)
+            {
+                for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
+                {
+                    for (int j = 0; j < ArrayInFunction.GetLength(1); j++)
+                    {
+                        ArrayInFunction[i, j] = new Random().Next(11);
+                    }
+                }
+            }
+
 
         }
     }
