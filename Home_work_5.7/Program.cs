@@ -17,6 +17,7 @@
             int[,] array = new int[m,n];
             double[] outputResault = new double[n];
             FillArrayAndOutput(array);
+            CalculateAverageColumn(array);
 
             void FillArrayAndOutput(int[,] ArrayInFunction)
             {
@@ -31,7 +32,21 @@
                 }
             }
 
-
+            double [] CalculateAverageColumn(int[,] ArrayInFunction)
+            {
+                int lengthColumn = ArrayInFunction.GetLength(1);
+                double[] arrayResault = new double[lengthColumn];
+                for (int j = 0; j < lengthColumn; j++)
+                {
+                    double sum = 0.0;
+                    for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
+                    {
+                        sum += Convert.ToDecimal(ArrayInFunction(i, j));
+                    }
+                    Console.Write("\n");
+                }
+                return (arrayResault);
+            }
         }
     }
 }
