@@ -17,7 +17,8 @@
             int[,] array = new int[m,n];
             double[] outputResault = new double[n];
             FillArrayAndOutput(array);
-            CalculateAverageColumn(array);
+            Console.WriteLine("Среднее арифметическое каждого столбца:");
+            Console.WriteLine($"{String.Join("\t", CalculateAverageColumn(array))}");
 
             void FillArrayAndOutput(int[,] ArrayInFunction)
             {
@@ -34,19 +35,20 @@
 
             double [] CalculateAverageColumn(int[,] ArrayInFunction)
             {
-                int lengthColumn = ArrayInFunction.GetLength(1);
+                int lengthColumn = array.GetLength(1);
                 double[] arrayResault = new double[lengthColumn];
                 for (int j = 0; j < lengthColumn; j++)
                 {
                     double sum = 0.0;
-                    for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
+                    for (int i = 0; i < array.GetLength(0); i++)
                     {
-                        sum += Convert.ToDecimal(ArrayInFunction(i, j));
+                        sum += array[i, j];
                     }
-                    Console.Write("\n");
+                    arrayResault[j] = sum/lengthColumn;
                 }
                 return (arrayResault);
             }
         }
+
     }
 }
