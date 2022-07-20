@@ -15,16 +15,19 @@
         {
             int m = 4, n = 4;
             int[,] array = new int[m,n];
-            FillArray(array);
+            double[] outputResault = new double[n];
+            FillArrayAndOutput(array);
 
-            void FillArray(int[,] ArrayInFunction)
+            void FillArrayAndOutput(int[,] ArrayInFunction)
             {
                 for (int i = 0; i < ArrayInFunction.GetLength(0); i++)
                 {
                     for (int j = 0; j < ArrayInFunction.GetLength(1); j++)
                     {
                         ArrayInFunction[i, j] = new Random().Next(11);
+                        Console.Write(ArrayInFunction[i, j] + "\t");
                     }
+                    Console.Write("\n");
                 }
             }
 
